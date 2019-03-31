@@ -5,8 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-public class Splitter {
-    public static void byChars(String inputName, String outputName, int num, boolean numerate) throws IOException {
+class Splitter {
+    static void byChars(String inputName, String outputName, int num, boolean numerate) throws IOException {
       File in = new File(inputName);
       int k = 0;
       for (int i = 0; i < in.length(); i += num) {
@@ -17,7 +17,7 @@ public class Splitter {
       }
     }
 
-    public static void byStrings(String inputName, String outputName, int num, boolean numerate) throws IOException {
+    static void byStrings(String inputName, String outputName, int num, boolean numerate) throws IOException {
       List<String> lines = Files.readAllLines(Paths.get(inputName), Charset.defaultCharset());
       int inputLines = 0;
       for (String ignored : lines) {
@@ -41,12 +41,23 @@ public class Splitter {
       }
     }
 
-    public static void byFiles(String inputName, String outputName, int num, boolean numerate) throws IOException {
-      int charForFile = (int) new File(inputName).length() / num;
-      Splitter.byChars(inputName, outputName, charForFile, numerate);
+    static void byFiles(String inputName, String outputName, int num, boolean numerate) throws IOException {
+      File in = new File(inputName);
+      int charForFile = (int) Math.ceil((double) in.length() / num);
+      int k = 0;
+      for (int i = 0; i < in.length(); i += charForFile) {
+        k++;
+        String input = i + charForFile < in.length() ? in.toString().substring(i, i + charForFile) :
+                in.toString().substring(i, (int) in.length() - 1);
+        Splitter.Writer(outputName, input, k, numerate);
       }
+      if (k < num) {
+        String input = in.toString().substring(k * charForFile, (int) in.length() - 1);
+        Splitter.Writer(outputName, input, num, numerate);
+      }
+    }
 
-    public static void Writer(String outputName, String input, int k, boolean numerate) throws IOException {
+    private static void Writer(String outputName, String input, int k, boolean numerate) throws IOException {
       char[] toChar = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
               'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
       if (numerate) {
