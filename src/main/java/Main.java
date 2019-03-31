@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
-public class Split {
+public class Main {
 
   public static void main(String[] args) throws IOException {
     boolean numerate = false;
@@ -43,13 +43,13 @@ public class Split {
       if (inputName == null) throw new IllegalArgumentException("Неверно введены данные"); }
       if (outputFile.equals("-")) outputName = inputName;
       if (fileOut > 0) {
-        Split.byFiles(inputName, outputName, fileOut, numerate);
+        Main.byFiles(inputName, outputName, fileOut, numerate);
       } else {
         if (lengthOut > 0) {
-          Split.byLength(inputName, outputName, lengthOut, numerate);
+          Main.byLength(inputName, outputName, lengthOut, numerate);
         } else {
       if (lineOut > 0) {
-        Split.byLines(inputName, outputName, lineOut, numerate);
+        Main.byLines(inputName, outputName, lineOut, numerate);
       }
         }
       }
