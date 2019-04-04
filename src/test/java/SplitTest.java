@@ -19,45 +19,44 @@ public class SplitTest {
   @Test
   public void byChars() throws IOException {
     Splitter.byChars("src/test/testData/input1.txt", "src/test/testData/output", 3, false);
-    assertFileContent("src/test/testData/outputaa", "[abc]");
-    assertFileContent("src/test/testData/outputab", "[d]");
-    new File("src/test/testData/outputaa").delete();
-    new File("src/test/testData/outputab").delete();
+    assertFileContent("src/test/testData/outputaa.txt", "[abc]");
+    assertFileContent("src/test/testData/outputab.txt", "[d]");
+    new File("src/test/testData/outputaa.txt").delete();
+    new File("src/test/testData/outputab.txt").delete();
     Splitter.byChars("src/test/testData/input2.txt", "src/test/testData/output", 2, true);
-    assertFileContent("src/test/testData/output1", "[ab]");
-    assertFileContent("src/test/testData/output2", "[cd]");
-    new File("src/test/testData/output1").delete();
-    new File("src/test/testData/output2").delete();
+    assertFileContent("src/test/testData/output1.txt", "[ab]");
+    assertFileContent("src/test/testData/output2.txt", "[cd]");
+    new File("src/test/testData/output1.txt").delete();
+    new File("src/test/testData/output2.txt").delete();
   }
 
   @Test
   public void byFiles() throws IOException {
     Splitter.byFiles("src/test/testData/input1.txt", "src/test/testData/output", 4, true);
-    assertFileContent("src/test/testData/output1", "[a]");
-    assertFileContent("src/test/testData/output2", "[b]");
-    assertFileContent("src/test/testData/output3", "[c]");
-    assertFileContent("src/test/testData/output4", "[d]");
-    new File("src/test/testData/output1").delete();
-    new File("src/test/testData/output2").delete();
-    new File("src/test/testData/output3").delete();
-    new File("src/test/testData/output4").delete();
+    assertFileContent("src/test/testData/output1.txt", "[a]");
+    assertFileContent("src/test/testData/output2.txt", "[b]");
+    assertFileContent("src/test/testData/output3.txt", "[c]");
+    assertFileContent("src/test/testData/output4.txt", "[d]");
+    new File("src/test/testData/output1.txt").delete();
+    new File("src/test/testData/output2.txt").delete();
+    new File("src/test/testData/output3.txt").delete();
+    new File("src/test/testData/output4.txt").delete();
     Splitter.byFiles("src/test/testData/input2.txt", "src/test/testData/output", 2, false);
-    assertFileContent("src/test/testData/outputaa", "[ab]");
-    assertFileContent("src/test/testData/outputab", "[cd]");
-    new File("src/test/testData/outputaa").delete();
-    new File("src/test/testData/outputab").delete();
+    assertFileContent("src/test/testData/outputaa.txt", "[ab]");
+    assertFileContent("src/test/testData/outputab.txt", "[cd]");
+    new File("src/test/testData/outputaa.txt").delete();
+    new File("src/test/testData/outputab.txt").delete();
   }
 
   @Test
   public void byStrings() throws IOException {
     Splitter.byStrings("src/test/testData/input1.txt", "src/test/testData/output", 2, false);
-    assertFileContent("src/test/testData/outputaa", "[abcd]");
-    new File("src/test/testData/outputaa").delete();
+    assertFileContent("src/test/testData/outputaa.txt", "[abcd]");
+    new File("src/test/testData/outputaa.txt").delete();
     Splitter.byStrings("src/test/testData/input2.txt", "src/test/testData/output", 3, true);
-    assertFileContent("src/test/testData/output1", "[a, b, c]");
-    assertFileContent("src/test/testData/output2", "[d]");
-    new File("src/test/testData/output1").delete();
-    new File("src/test/testData/output2").delete();
-
+    assertFileContent("src/test/testData/output1.txt", "[a, b, c]");
+    assertFileContent("src/test/testData/output2.txt", "[d]");
+    new File("src/test/testData/output1.txt").delete();
+    new File("src/test/testData/output2.txt").delete();
   }
 }

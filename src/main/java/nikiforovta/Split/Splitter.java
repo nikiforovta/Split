@@ -66,7 +66,7 @@ package nikiforovta.Split;
        char[] toChar = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
        if (numerate) {
-         File file = new File(outputName + k);
+         File file = new File(outputName + k + ".txt");
          FileWriter fileWriter = new FileWriter(file);
          BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
            bufferedWriter.write(input);
@@ -81,7 +81,7 @@ package nikiforovta.Split;
              j = 1;
            }
          }
-         File file = new File(outputName + toChar[i] + toChar[j - 1]);
+         File file = new File(outputName + toChar[i] + toChar[j - 1] + ".txt");
          FileWriter fileWriter = new FileWriter(file);
          BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
          bufferedWriter.write(input);
