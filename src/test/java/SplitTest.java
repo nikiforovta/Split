@@ -1,12 +1,10 @@
 import nikiforovta.Split.Splitter;
 import org.junit.Test;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 import static org.junit.Assert.assertEquals;
 
 public class SplitTest {
@@ -49,11 +47,11 @@ public class SplitTest {
   }
 
   @Test
-  public void byStrings() throws IOException {
-    Splitter.byStrings("src/test/testData/input1.txt", "src/test/testData/output", 2, false);
+  public void byLines() throws IOException {
+    Splitter.byLines("src/test/testData/input1.txt", "src/test/testData/output", 2, false);
     assertFileContent("src/test/testData/outputaa.txt", "[abcd]");
     new File("src/test/testData/outputaa.txt").delete();
-    Splitter.byStrings("src/test/testData/input2.txt", "src/test/testData/output", 3, true);
+    Splitter.byLines("src/test/testData/input2.txt", "src/test/testData/output", 3, true);
     assertFileContent("src/test/testData/output1.txt", "[a, b, c]");
     assertFileContent("src/test/testData/output2.txt", "[d]");
     new File("src/test/testData/output1.txt").delete();

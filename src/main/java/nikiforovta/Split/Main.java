@@ -49,7 +49,7 @@ public class Main {
         if (numOfChars != 0) Splitter.byChars(inputName, outputName, numOfChars, numerate);
         if (numOfFiles != 0) Splitter.byFiles(inputName, outputName, numOfChars, numerate);
       } else {
-        Splitter.byStrings(inputName, outputName, numOfString, numerate);
+        Splitter.byLines(inputName, outputName, numOfString, numerate);
       }
     }
   }
