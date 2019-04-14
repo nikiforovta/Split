@@ -7,7 +7,7 @@ package nikiforovta.Split;
 
 
  public class Splitter {
-   private static char[] toChar = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+   private static final char[] toChar = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
    public static void byChars(String inputName, String outputName, int num, boolean numerate) throws IOException {
      String in = getString(inputName);

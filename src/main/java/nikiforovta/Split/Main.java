@@ -2,8 +2,7 @@ package nikiforovta.Split;
 
 import java.io.IOException;
 
-public class Main {
-  private static String inputName = "";
+class Main {
   private static String outputName = "x";
   private static boolean numerate = false;
   private static int numOfString = 100;
@@ -23,7 +22,7 @@ public class Main {
     } else {
       boolean isFound = false;
       if (args[0].equals("-d")) numerate = true;
-      inputName = args[args.length - 1];
+      String inputName = args[args.length - 1];
       for (int i = 0; i < args.length - 1 ; i++) {
         if (args[i].equals("-l")) {
           if (isFound) throw new IllegalArgumentException();
